@@ -31,6 +31,25 @@ router.get("/", async (req, res) => {
 
 
 
+router.get("/mine", authMiddleware, async (req, res) => {
+  try {
+    const posts = await Post.findAll({
+      where: { userId: req.user.id },
+      include: [{ model: Category, as: "category" }],
+    });
+
+    res.status(200).json(posts);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+
+
+
+
+
+
 
 router.put("/:id", authMiddleware, async (req, res) => {
   try {

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Tech Blog - My Posts</title>
+  </head>
+  <body>
+    <h1>My Posts</h1>
+
+    <p>
+      <a href="/">Back to all posts</a>
+      <button id="logout-button">Logout</button>
+    </p>
+
+    <h2>New Post</h2>
+    <form id="post-form">
+      <input type="text" id="post-title" placeholder="Title" required />
+      <br />
+      <textarea id="post-content" placeholder="Write your post..." required></textarea>
+      <br />
+      <select id="post-category"></select>
+      <button type="submit">Save Post</button>
+    </form>
+
+    <p id="message"></p>
+
+    <div id="my-posts"></div>
+
+    <script src="/dashboard.js"></script>
+  </body>
+</html>
