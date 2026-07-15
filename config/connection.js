@@ -2,9 +2,9 @@
 require("dotenv").config();
 
 const Sequelize = require("sequelize");
-
-// use the hosted database url if it exists (for Render), otherwise use the local .env settings
 const sequelize = process.env.JAWSDB_URL
+
+
   ? new Sequelize(process.env.JAWSDB_URL)
   : new Sequelize(
       process.env.DB_DATABASE,
@@ -17,4 +17,5 @@ const sequelize = process.env.JAWSDB_URL
       }
     );
 
+    
 module.exports = sequelize;
